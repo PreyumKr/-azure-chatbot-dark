@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html>
 <head>
     <title>Azure Chat-Bot</title>
     <meta charset="UTF-8">
@@ -6,48 +7,98 @@
     <meta name="viewport" content="width=device-width,height=device-height, initial-scale=1.0,maximum-scale=1.0, user-scalable=0">
     <script src="./webchat.js"></script>
     <link rel="icon" type="image/x-icon" href="./favicon.ico">
-    <!-- <link rel="stylesheet" href="style.css"> -->
+    <style>
+        /* Add your CSS styles here */
+        /* Example: */
+        .taskbar {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        .taskbar button {
+            background-color: #444;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            cursor: pointer;
+        }
+        
+    </style>
 </head>
 <body style="background-color:rgb(0, 0, 0);">
-  <div style="overflow:auto; position: center; height: 91vh; width: 97vw; border: 1px solid black;" id="webchat" role="main"></div>
-  <script>
-     // Set  the CSS rules.
-     const styleSet = window.WebChat.createStyleSet({
-        rootHeight: '100%',
-        rootWidth: '100%',
-        backgroundColor:'#264242',
-        bubbleBackground: "#54a16a",
-        bubbleBorderRadius: 6,
-        bubbleBorderColor: "#54a16a",
-        bubbleBorderStyle: "solid",
-        bubbleFromUserBackground: "#6b6b6b",
-        bubbleFromUserBorderRadius: 6,
-        bubbleFromUserBorderColor: "#6b6b6b",
-        bubbleFromUserBorderStyle: "solid",
-        bubbleTextColor: "white",
-        bubbleFromUserTextColor: "white",
-        notificationText: "white",
-        sendBoxBackground: "#526e6e",
-        sendBoxButtonColor: "#b3c4c4",
-        sendBoxTextColor: "white",
-        sendBoxBorderTop: void 0,
-        sendBoxHeight: 60,
-        sendBoxButtonShadeColorOnHover: "#678282",
-        // sendBoxButtonShadeBorderRadius: 10
-      });
-      
-      styleSet.textContent = {
-         ...styleSet.textContent,
-         fontSize: '15px',
-         fontFamily: "'Calibri', 'Helvetica Neue', sans-serif",
-         fontWeight: 'normal'
-      };
+    <!-- Taskbar -->
+    <div class="taskbar">
+        <button id="homeButton">Home</button>
+        <button id="historyButton">History</button>
+        <button id="contactButton">Contact</button>
+        <button id="aboutButton">About Us</button>
+    </div>
 
-    window.WebChat.renderWebChat({
-      directLine: window.WebChat.createDirectLine({
-          secret: 'sbSc6oxpRF4.4qNsQYRcQ8DgQHTo-WFG2OKOxa8t5wmsMq2aGQkaYIY'}),
-      styleSet
-    }, document.getElementById('webchat'));
-    
-  </script>
+    <div style="overflow:auto; position: center; height: 81vh; width: 97vw; border: 1px solid black;" id="webchat" role="main"></div>
+
+    <script>
+        // Set the CSS rules.
+        const styleSet = window.WebChat.createStyleSet({
+            rootHeight: '100%',
+            rootWidth: '100%',
+            backgroundColor: '#264242',
+            bubbleBackground: '#54a16a',
+            bubbleBorderRadius: 6,
+            bubbleBorderColor: '#54a16a',
+            bubbleBorderStyle: 'solid',
+            bubbleFromUserBackground: '#6b6b6b',
+            bubbleFromUserBorderRadius: 6,
+            bubbleFromUserBorderColor: '#6b6b6b',
+            bubbleFromUserBorderStyle: 'solid',
+            bubbleTextColor: 'white',
+            bubbleFromUserTextColor: 'white',
+            notificationText: 'white',
+            sendBoxBackground: '#526e6e',
+            sendBoxButtonColor: '#b3c4c4',
+            sendBoxTextColor: 'white',
+            sendBoxBorderTop: void 0,
+            sendBoxHeight: 60,
+            sendBoxButtonShadeColorOnHover: '#678282',
+            // sendBoxButtonShadeBorderRadius: 10
+        });
+
+        styleSet.textContent = {
+            ...styleSet.textContent,
+            fontSize: '15px',
+            fontFamily: "'Calibri', 'Helvetica Neue', sans-serif",
+            fontWeight: 'normal'
+        };
+
+        window.WebChat.renderWebChat({
+            directLine: window.WebChat.createDirectLine({
+                secret: 'sbSc6oxpRF4.4qNsQYRcQ8DgQHTo-WFG2OKOxa8t5wmsMq2aGQkaYIY'
+            }),
+            styleSet
+        }, document.getElementById('webchat'));
+
+        // Add click event handlers for the taskbar buttons
+        document.getElementById('homeButton').addEventListener('click', () => {
+            // Handle the "Home" button click (e.g., navigate to the home page)
+            // You can add your logic here.
+        });
+
+        document.getElementById('historyButton').addEventListener('click', () => {
+            // Handle the "History" button click (e.g., navigate to the history page)
+            // You can add your logic here.
+        });
+
+        document.getElementById('contactButton').addEventListener('click', () => {
+            // Handle the "Contact" button click (e.g., navigate to the contact page)
+            // You can add your logic here.
+        });
+
+        document.getElementById('aboutButton').addEventListener('click', () => {
+            // Handle the "About Us" button click (e.g., navigate to the about page)
+            // You can add your logic here.
+        });
+    </script>
 </body>
+</html>
